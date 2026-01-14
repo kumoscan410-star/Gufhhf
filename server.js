@@ -2,7 +2,7 @@ const http = require('http');
 const https = require('https');
 const { URL } = require('url');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 8000;
 
 // رؤوس محاكاة المتصفح تماماً
 const BROWSER_HEADERS = {
@@ -348,4 +348,5 @@ server.listen(PORT, () => {
 process.on('SIGINT', () => {
     console.log('\n👋 Shutting down server...');
     process.exit(0);
+
 });
